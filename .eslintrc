@@ -1,0 +1,110 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "babelOptions": {
+      "presets": [["babel-preset-react-app", false], "babel-preset-react-app/prod"]
+    },
+    "requireConfigFile": false
+  },
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "sort-imports": "off",
+    "import/order": "off",
+    "simple-import-sort/imports": ["error", {
+      "groups": [
+        ["^\\u0000", "^@?\\w", "^[^.]", "^\\."],
+        ["\\.(gif|png|jpe?g|svg|bmp)$"],
+        ["\\.(css|sass|scss)$"]
+      ]
+    }],
+    "simple-import-sort/exports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.js", "src/**/*.jsx"],
+      "parser": "@babel/eslint-parser",
+      "extends": ["airbnb", "prettier"],
+      "plugins": ["@babel"],
+      "rules": {
+        "react/prefer-stateless-function": 0,
+        "no-console": 0,
+        "one-var-declaration-per-line": 0, // 允许一行定义多个变量
+        "no-confusing-arrow": 0, // 允许在与操作符相混淆的地方使用箭头函数，如var x = a => 1 ? 2 : 3;
+        "camelcase": [2, { "ignoreDestructuring": true }], // 只允许解构出的变量使用驼峰命名
+        "no-nested-ternary": 0, // 允许嵌套的三元表达式
+        "no-plusplus": 0, // 允许使用一元运算符 ++ --
+        "no-restricted-syntax": 0, // 不禁用特定的语法，如对数组使用 for...of 循环
+        "no-bitwise": 0, // 允许位运算
+        "curly": ["error", "multi-line"],  // 判断语句换行了，就得增加大括号
+        "quotes": ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": false }], // 字符串强制使用双引号
+        "radix": 0, // 允许使用 parseInt 时不传入第二个参数基数
+        "import/prefer-default-export": 0, // 文件中只有一个导出时，可以不使用 export default 导出
+        "no-shadow": 0, // 允许变量声明与外层作用域的变量同名
+        "react/jsx-props-no-spreading": 0, // 允许直接在标签中解构 props  <Component {...props} >
+        "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true }], // 允许使用三目运算以及逻辑短语
+        "class-methods-use-this": 0, // 允许类方法不使用 this
+        "react/no-unstable-nested-components": [2, { "allowAsProps": true }], // 允许在 props 中传入函数直接返回 jsx
+        "react/jsx-wrap-multilines": 0, // 允许标签前面不折行
+        "react/jsx-closing-tag-location": 0, // 允许结束标签和开始标签不在同一行时不在同一列
+        "no-use-before-define": 0,
+        "jsx-a11y/label-has-for": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/anchor-has-content": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "jsx-a11y/no-noninteractive-element-interactions": 0, // 允许非交互元素（如： div, li 等）添加交互事件
+        "react/function-component-definition": [2, { "namedComponents": "arrow-function" }], // 限定函数组件定义只能使用箭头函数,
+        "import/no-cycle": 0, // 允许循环引用
+        "react/no-array-index-key": 0,
+        "func-names": 0,
+        "arrow-body-style": 0,
+        "react/sort-comp": 0,
+        "react/prop-types": 0,
+        "react/jsx-first-prop-new-line": 0,
+        "react/jsx-filename-extension": [
+          1,
+          {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        ],
+        "import/extensions": 0,
+        "import/no-unresolved": 0,
+        "import/no-extraneous-dependencies": 0,
+        "prefer-destructuring": 0,
+        "no-param-reassign": 0,
+        "no-return-assign": 0,
+        "max-len": 0,
+        "consistent-return": 0,
+        "no-redeclare": 0,
+        "react/require-extension": 0,
+        "react/no-danger": 0,
+        "function-paren-newline": 0,
+        "object-curly-newline": 0,
+        "no-restricted-globals": 0,
+        "no-loop-func": 0,
+        "no-continue": 0
+      }
+    },
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ]
+    }
+  ]
+}
