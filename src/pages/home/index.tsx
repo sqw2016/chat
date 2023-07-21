@@ -1,6 +1,8 @@
 import ChatInput from "@/components/ChatInput";
+import UserChat from "@/components/UserChat";
+import GPTChat from "@/components/GPTChat";
 
-import styles from './index.module.less';
+import styles from "./index.module.less";
 
 const Home = () => (
 	<div className={styles.container}>
@@ -23,7 +25,10 @@ const Home = () => (
 				</select>
 			</label>
 		</div>
-		<div className={styles.content}>body</div>
+		<div className={styles.content}>
+			<UserChat />
+			<GPTChat />
+		</div>
 		<div className={styles.input}>
 			<ChatInput />
 		</div>
