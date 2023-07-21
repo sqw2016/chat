@@ -9,7 +9,7 @@ const ChatInput: React.FC = () => {
 		textarea.style.height = textarea.scrollHeight + "px";
 	};
 
-	return <textarea className={styles.textarea} onChange={onChange} rows="1"></textarea>;
+	return <textarea className={styles.textarea} onChange={onChange} rows="1" />;
 }
 
 export default ChatInput;

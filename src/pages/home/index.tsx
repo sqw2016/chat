@@ -1,11 +1,17 @@
 import ChatInput from "@/components/ChatInput";
 import UserChat from "@/components/UserChat";
 import GPTChat from "@/components/GPTChat";
+import axios from "axios"
 
 import styles from "./index.module.less";
 
-const Home = () => (
-	<div className={styles.container}>
+const Home = () => {
+
+	const getAnswers = () => {
+		axios.post("")
+	}
+
+	return <div className={styles.container}>
 		<div className={styles.header}>
 			<label htmlFor="size">
 				请选择字数限制
@@ -33,6 +39,6 @@ const Home = () => (
 			<ChatInput />
 		</div>
 	</div>
-);
+}
 
 export default Home

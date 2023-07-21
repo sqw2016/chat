@@ -1,7 +1,12 @@
 import styles from "./index.module.less";
 
-const UserChat = () => {
-	return <div className={styles.userChat}>User</div>;
+const UserChat = ({ content }) => {
+	return <div className={styles.userChat}>
+		<div className={styles.icon}>
+			U
+		</div>
+		<div>{content}</div>
+	</div>;
 };
 
 export default UserChat;
