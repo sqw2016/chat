@@ -1,6 +1,11 @@
+import React from "react"
 import styles from "./index.module.less";
 
-const UserChat = ({ content }) => {
+interface UserChatProps {
+	content: string
+}
+
+const UserChat: React.FC<UserChatProps> = ({ content }) => {
 	return <div className={styles.userChat}>
 		<div className={styles.icon}>
 			U

@@ -1,3 +1,9 @@
+.inputContainer {
+  display: flex;
+  align-items: flex-end;
+  background: #45474c85;
+}
+
 .textarea {
   width: 100%;
   border: 0 !important;
@@ -5,7 +11,29 @@
   border-radius: 4px;
   padding: 12px;
   box-sizing: border-box;
-  background: #45474c85;
+  background: transparent;
   color: white;
   resize: none;
+}
+
+.btn {
+  flex-shrink: 0;
+  font-size: 30px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+@keyframes loading-circle {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  font-size: 30px;
+  margin: 4px;
+  animation: loading-circle 2s linear infinite;
 }

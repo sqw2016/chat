@@ -18,10 +18,23 @@
   line-height: 60px;
   background: @bgColor;
   flex-shrink: 0;
+
+  label {
+    margin-right: 20px;
+  }
+
+  select {
+    border: 0 !important;
+    outline: none !important;
+    color: white;
+    background: #343540;
+    margin-left: 5px;
+  }
 }
 
 .content {
   flex: 1;
+  overflow-y: auto;
 }
 
 .input {
