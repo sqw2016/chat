@@ -58,17 +58,17 @@ const Home = () => {
 		setInput("")
 	}
 
-	useEffect(() => {
-		// 获取本地缓存的 chats
-		const storageChats = localStorage.getItem(STORAGE_KEY);
-		if (storageChats?.length) setChats(JSON.parse(storageChats))
-	}, [])
-
-	useEffect(() => {
-		// 清理 isNew，并将新的 chats 放到 Storage 中
-		const storageChats = chats.map(item => ({...item, isNew: false}))
-		localStorage.setItem(STORAGE_KEY, JSON.stringify(storageChats))
-	}, [chats])
+	// useEffect(() => {
+	// 	// 获取本地缓存的 chats
+	// 	const storageChats = localStorage.getItem(STORAGE_KEY);
+	// 	if (storageChats?.length) setChats(JSON.parse(storageChats))
+	// }, [])
+	//
+	// useEffect(() => {
+	// 	// 清理 isNew，并将新的 chats 放到 Storage 中
+	// 	const storageChats = chats.map(item => ({...item, isNew: false}))
+	// 	localStorage.setItem(STORAGE_KEY, JSON.stringify(storageChats))
+	// }, [chats])
 
 	return <div className={styles.container}>
 		<div className={styles.header}>
